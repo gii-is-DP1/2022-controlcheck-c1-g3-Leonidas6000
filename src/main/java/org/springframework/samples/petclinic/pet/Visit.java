@@ -110,17 +110,23 @@ public class Visit extends BaseEntity {
 	 * Setter for property pet.
 	 * @param pet New value of property pet.
 	 */
+	
+	
+	@ManyToOne(optional = true)
+	@JoinColumn(name="recovery_room")
+	RecoveryRoom recoveryRoom;
+	
+	
 	public void setPet(Pet pet) {
 		this.pet = pet;
 	}
 
 	public RecoveryRoom getRecoveryRoom() {
-		// To be implemented
-		return null;
+		return this.recoveryRoom;
 	}
 
 	public void setRecoveryRoom(RecoveryRoom room) {
-		// To be implemented
+		this.recoveryRoom=room;
 	}
 
 }
